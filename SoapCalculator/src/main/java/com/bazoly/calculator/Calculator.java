@@ -9,5 +9,9 @@ public class Calculator {
 	public int subtraction(int minuend, int subtrahend) {
 		return minuend - subtrahend;
 	}
+	
+	public int multiplication(int multiplier, int multiplicand) {
+		return multiplier * multiplicand;
+	}
 
 }
