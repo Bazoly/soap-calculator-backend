@@ -13,5 +13,9 @@ public class Calculator {
 	public int multiplication(int multiplier, int multiplicand) {
 		return multiplier * multiplicand;
 	}
+	
+	public int divison(int dividend, int divisor) {
+		return dividend / divisor;
+	}
 
 }
