@@ -2,8 +2,9 @@ package com.bazoly.calculator;
 
 public class Calculator {
 	
-	public long addition(long number1, long number2) {
-		return number1 + number2;
+	public int addition(int addend1, int addend2) {
+		return addend1 + addend2;
+	}
 	}
 
 }
