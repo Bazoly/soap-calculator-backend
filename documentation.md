@@ -16,7 +16,7 @@ Ezt a `NoClassFoundError` -t akkor kaptam amikor el akartam indítani a Tomcat s
 
 De volt olyan eset hogy ezt a hibaüzenetet kaptam az Eclipse-től: **IWAB0489E** Error when deploying Web service to Axis runtime.
 
-Végül is ezekkel a beállításokkal sikerült megcsinálnom a projektet.
+#### Végül is ezekkel a beállításokkal sikerült megcsinálnom a projektet.
 ![Dynamic Web Project](documentation_img/Dynamic_Web_Project.png)
 
 A Configuration résznél még hozzá kellett adnom az Axis2 Web Services-t.
@@ -34,7 +34,21 @@ Valami okból kifolyólag a SoapUI alkalmazást nem tudtam elindítani a parancs
 ![SoapUI not run](documentation_img/SoapUI_not_run.png)
 
 Úgyhogy megpróbáltam terminálból elindítani a shell script-ét és úgy már sikerült elindítanom a SoapUI.
-![SoapUI run in the terminal](documentation_img/SoapUI_run_in_terminal.png)
+![SoapUI run in the terminal 1](documentation_img/SoapUI_run_in_terminal_1.png)
+![SoapUI run in the terminal 2](documentation_img/SoapUI_run_in_terminal_2.png)
 
 Először hozzáadtam a WSDL filet a projekthez.
 ![Add WSDL location](documentation_img/Add_WSDL_location.png)
+
+Majd végül leteszteltem a webszolgáltatásokat.
+- Összeadás:
+![SoapUI addition](documentation_img/SoapUI_addition.png)
+
+- Kivonás:
+![SoapUI subtraction](documentation_img/SoapUI_subtraction.png)
+
+- Szorzás:
+![SoapUI multiplication](documentation_img/SoapUI_multiplication.png)
+
+- Osztás:
+![SoapUI divison](documentation_img/SoapUI_divison.png)
