@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -33,21 +33,21 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="Calculator" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="multiplication" qname="ns1:multiplication" returnQName="ns1:multiplicationReturn" returnType="xsd:int" soapAction="" xmlns:ns1="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:multiplier" type="xsd:int"/>
-   <ns2:parameter qname="ns1:multiplicand" type="xsd:int"/>
+  <ns2:operation name="addition" qname="ns1:addition" returnQName="ns1:additionReturn" returnType="xsd:double" soapAction="" xmlns:ns1="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:addend1" type="xsd:double"/>
+   <ns2:parameter qname="ns1:addend2" type="xsd:double"/>
   </ns2:operation>
-  <ns1:operation name="addition" qname="ns2:addition" returnQName="ns2:additionReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:addend1" type="xsd:int"/>
-   <ns1:parameter qname="ns2:addend2" type="xsd:int"/>
+  <ns1:operation name="subtraction" qname="ns2:subtraction" returnQName="ns2:subtractionReturn" returnType="xsd:double" soapAction="" xmlns:ns2="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:minuend" type="xsd:double"/>
+   <ns1:parameter qname="ns2:subtrahend" type="xsd:double"/>
   </ns1:operation>
-  <ns1:operation name="subtraction" qname="ns3:subtraction" returnQName="ns3:subtractionReturn" returnType="xsd:int" soapAction="" xmlns:ns3="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns3:minuend" type="xsd:int"/>
-   <ns1:parameter qname="ns3:subtrahend" type="xsd:int"/>
+  <ns1:operation name="multiplication" qname="ns3:multiplication" returnQName="ns3:multiplicationReturn" returnType="xsd:double" soapAction="" xmlns:ns3="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:multiplier" type="xsd:double"/>
+   <ns1:parameter qname="ns3:multiplicand" type="xsd:double"/>
   </ns1:operation>
-  <ns1:operation name="divison" qname="ns4:divison" returnQName="ns4:divisonReturn" returnType="xsd:int" soapAction="" xmlns:ns4="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns4:dividend" type="xsd:int"/>
-   <ns1:parameter qname="ns4:divisor" type="xsd:int"/>
+  <ns1:operation name="divison" qname="ns4:divison" returnQName="ns4:divisonReturn" returnType="xsd:double" soapAction="" xmlns:ns4="http://calculator.bazoly.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:dividend" type="xsd:double"/>
+   <ns1:parameter qname="ns4:divisor" type="xsd:double"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="divison subtraction multiplication addition"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
