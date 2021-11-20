@@ -12,3 +12,6 @@ Ne használj pusztán springBoot alkalmazást, mindenképpen telepítsd ki egy k
 A webszolgáltatás működését teszteld le a SoapUI program segítségével. 
 A fejlesztéshez az Eclipse fejlesztőeszközt használd!  
 A fejlesztés és tesztelés lépéseiről készíts dokumentációt. A doksinak nem kell hosszúnak lennie, inkább egy step-by-step leírás legyen, amiben bemutatod, hogy milyen lépéseken keresztül sikerült megvalósítani a feladatot (screen shotokkal), illetve mi okozott problémát, és hogyan sikerült azt megoldani.
+
+## Dokumentáció: 
+[DOCUMENTATION.md](DOCUMENTATION.md)
