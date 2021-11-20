@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8f15294b-a896-4e7f-a7fd-930d480f8a5a" activeEnvironment="Default" name="Calculator" resourceRoot="" soapui-version="5.6.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c5886a19-bffe-4166-bc67-0d43843e6485" wsaVersion="NONE" name="CalculatorSoapBinding" type="wsdl" bindingName="{http://calculator.bazoly.com}CalculatorSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/home/zoli/codecool/jobhunt/soap-calculator-backend/SoapCalculator/src/main/webapp/wsdl/Calculator.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/zoli/codecool/jobhunt/soap-calculator-backend/SoapCalculator/src/main/webapp/wsdl/Calculator.wsdl"><con:part><con:url>file:/home/zoli/codecool/jobhunt/soap-calculator-backend/SoapCalculator/src/main/webapp/wsdl/Calculator.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://calculator.bazoly.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://calculator.bazoly.com" xmlns:intf="http://calculator.bazoly.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://calculator.bazoly.com" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="addition">
+        <complexType>
+          <sequence>
+            <element name="addend1" type="xsd:double"/>
+            <element name="addend2" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="additionResponse">
+        <complexType>
+          <sequence>
+            <element name="additionReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subtraction">
+        <complexType>
+          <sequence>
+            <element name="minuend" type="xsd:double"/>
+            <element name="subtrahend" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="subtractionResponse">
+        <complexType>
+          <sequence>
+            <element name="subtractionReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="multiplication">
+        <complexType>
+          <sequence>
+            <element name="multiplier" type="xsd:double"/>
+            <element name="multiplicand" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="multiplicationResponse">
+        <complexType>
+          <sequence>
+            <element name="multiplicationReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="divison">
+        <complexType>
+          <sequence>
+            <element name="dividend" type="xsd:double"/>
+            <element name="divisor" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="divisonResponse">
+        <complexType>
+          <sequence>
+            <element name="divisonReturn" type="xsd:double"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="subtractionResponse">
+    <wsdl:part element="impl:subtractionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicationResponse">
+    <wsdl:part element="impl:multiplicationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="multiplicationRequest">
+    <wsdl:part element="impl:multiplication" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="divisonRequest">
+    <wsdl:part element="impl:divison" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="divisonResponse">
+    <wsdl:part element="impl:divisonResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="additionRequest">
+    <wsdl:part element="impl:addition" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="additionResponse">
+    <wsdl:part element="impl:additionResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="subtractionRequest">
+    <wsdl:part element="impl:subtraction" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Calculator">
+    <wsdl:operation name="addition">
+      <wsdl:input message="impl:additionRequest" name="additionRequest"></wsdl:input>
+      <wsdl:output message="impl:additionResponse" name="additionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtraction">
+      <wsdl:input message="impl:subtractionRequest" name="subtractionRequest"></wsdl:input>
+      <wsdl:output message="impl:subtractionResponse" name="subtractionResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplication">
+      <wsdl:input message="impl:multiplicationRequest" name="multiplicationRequest"></wsdl:input>
+      <wsdl:output message="impl:multiplicationResponse" name="multiplicationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="divison">
+      <wsdl:input message="impl:divisonRequest" name="divisonRequest"></wsdl:input>
+      <wsdl:output message="impl:divisonResponse" name="divisonResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoapBinding" type="impl:Calculator">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addition">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="additionRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="additionResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="subtraction">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="subtractionRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="subtractionResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="multiplication">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="multiplicationRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="multiplicationResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="divison">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="divisonRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="divisonResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorService">
+    <wsdl:port binding="impl:CalculatorSoapBinding" name="Calculator">
+      <wsdlsoap:address location="http://localhost:8080/SoapCalculator/services/Calculator"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/SoapCalculator/services/Calculator</con:endpoint></con:endpoints><con:operation id="1d19ca60-2a3f-447b-8351-b4d430cfd524" isOneWay="false" action="" name="addition" bindingOperationName="addition" type="Request-Response" outputName="additionResponse" inputName="additionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="36fa0620-86d7-4956-b1bb-7041cfe70dd0" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SoapCalculator/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.bazoly.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cal:addition>
+         <cal:addend1>5.5</cal:addend1>
+         <cal:addend2>3</cal:addend2>
+      </cal:addition>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.bazoly.com/Calculator/additionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6f269100-47f3-44a2-9924-8e6a68937e62" isOneWay="false" action="" name="divison" bindingOperationName="divison" type="Request-Response" outputName="divisonResponse" inputName="divisonRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c692a08-9938-4428-b3b1-1728c5369324" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SoapCalculator/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.bazoly.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cal:divison>
+         <cal:dividend>5</cal:dividend>
+         <cal:divisor>2</cal:divisor>
+      </cal:divison>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.bazoly.com/Calculator/divisonRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1c5ca3e2-3943-4ca5-8552-1743c40123a4" isOneWay="false" action="" name="multiplication" bindingOperationName="multiplication" type="Request-Response" outputName="multiplicationResponse" inputName="multiplicationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1b123e75-46f5-44b6-a040-773f9c51a9e1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SoapCalculator/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.bazoly.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cal:multiplication>
+         <cal:multiplier>3</cal:multiplier>
+         <cal:multiplicand>0.5</cal:multiplicand>
+      </cal:multiplication>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.bazoly.com/Calculator/multiplicationRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="2d4fea29-fbba-4b6c-88a0-76ec2059fac1" isOneWay="false" action="" name="subtraction" bindingOperationName="subtraction" type="Request-Response" outputName="subtractionResponse" inputName="subtractionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2c455ed3-8ca8-4e54-9fb6-90f511f02f36" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/SoapCalculator/services/Calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.bazoly.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cal:subtraction>
+         <cal:minuend>1</cal:minuend>
+         <cal:subtrahend>2.5</cal:subtrahend>
+      </cal:subtraction>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.bazoly.com/Calculator/subtractionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
